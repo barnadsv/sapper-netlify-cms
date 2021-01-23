@@ -36,6 +36,20 @@
 	}
 </style>
 
+<script>
+	
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+    	console.log('Functions are coming...');
+    
+		fetch("/.netlify/functions/hello")
+		.then(response => response.json())
+		.then(json => console.log(json));
+	});
+
+</script>
+
 <svelte:head>
 	<title>Sapper project template</title>
 </svelte:head>
