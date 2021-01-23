@@ -1,6 +1,6 @@
 {
-  "name": "TODO",
-  "description": "TODO",
+  "name": "sapper-netlify-cms",
+  "description": "Aplicação testando Sapper com Netlify CMS",
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
