@@ -19,7 +19,7 @@ export function get(req, res, _) {
 	const renderer = new marked.Renderer();
 
 	const { data, content } = grayMatter(post);
-	const html = marked(content, { rendered });
+	const html = marked(content, { renderer });
 
 	if (html) {
 		res.writeHead(200, {
