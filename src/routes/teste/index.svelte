@@ -1,9 +1,17 @@
 <script context="module">
-	export function preload() {
-		return this.fetch(`teste.json`).then(r => r.json()).then(testes => {
+	// export function preload() {
+	// 	return this.fetch(`teste.json`).then(r => r.json()).then(testes => {
+    //         return { testes };
+	// 	});
+    // }
+    export function preload() {
+        return this.fetch(`/.netlify/functions/todos-testes`)
+        .then(r => r.json())
+        .then(testes => {
+            console.log(testes);
             return { testes };
-		});
-	}
+        });
+    }
 </script>
 
 <script>

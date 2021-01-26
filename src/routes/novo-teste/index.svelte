@@ -8,12 +8,13 @@
     // }
 
     const salvarTeste = async (data) => {
-        const res = await fetch(`novo-teste.json`, {
+        const res = await fetch(`/.netlify/functions/novo-teste`, {
             body: JSON.stringify(data),
             method: 'POST'
         });
         const novoTeste = await res.json();
         console.log(novoTeste);
+        
     }
 
     // onMount(async () => {

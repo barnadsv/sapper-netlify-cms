@@ -6,18 +6,7 @@ if (typeof fetch !== 'function') {
 }
 
 const getAllTestes = () => {
-	// try {
-	// 	return fs.readdirSync('static/testes/').map(fileName => {
-	// 		const teste = fs.readFileSync(
-	// 			path.resolve('static/testes', fileName),
-	// 			'utf-8'
-	// 		);
-	// 		return grayMatter(teste).data;
-	// 	});
-	// } catch (e) {
-	// 	return [];
-    // }
-    return fetch('/.netlify/functions/todos-testes', {
+	return fetch('/.netlify/functions/todos-testes', {
         method: 'GET'
     })
     .then(response => {
