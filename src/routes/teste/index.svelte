@@ -9,7 +9,8 @@
         .then(r => r.json())
         .then(testes => {
             console.log(testes);
-            return { testes.map(teste => teste.data) };
+            return { testes };
+            // return { testes.map(teste => teste.data) };
         });
     }
 </script>
