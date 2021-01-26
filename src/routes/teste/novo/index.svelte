@@ -3,9 +3,9 @@
     // import { onMount } from 'svelte';
     let teste = { name: '', slug: '', html: '' };
 
-    if (typeof fetch !== 'function') {
-        global.fetch = require('node-fetch');
-    }
+    // if (typeof fetch !== 'function') {
+    //     global.fetch = require('node-fetch');
+    // }
 
     const salvarTeste = async (data) => {
         const res = await fetch(`teste/novo.json`);

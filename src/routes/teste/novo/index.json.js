@@ -1,3 +1,7 @@
+if (typeof fetch !== 'function') {
+    global.fetch = require('node-fetch');
+}
+
 const createTeste = (data) => {
     return fetch('/.netlify/functions/novo-teste', {
         body: JSON.stringify(data),

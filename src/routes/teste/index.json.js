@@ -1,6 +1,9 @@
 // import fs from 'fs';
 // import path from 'path';
 // import grayMatter from 'gray-matter';
+if (typeof fetch !== 'function') {
+    global.fetch = require('node-fetch');
+}
 
 const getAllTestes = () => {
 	// try {
