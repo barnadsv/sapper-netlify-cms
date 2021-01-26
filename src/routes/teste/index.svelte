@@ -15,7 +15,7 @@
 </script>
 
 <script>
-    export const testes = [];
+    export let testes = [];
 </script>
 
 <style>
@@ -34,7 +34,7 @@
 <a href="novo-teste">Novo Teste</a>
 
 <ul>
-    <!-- {#each testes as teste}
+    {#each testes as teste}
         <li><a rel="prefetch" href="teste/{teste.slug}">{teste.name}</a></li>
-    {/each} -->
+    {/each}
 </ul>
