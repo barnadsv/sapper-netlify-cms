@@ -2,14 +2,23 @@
 	export async function preload({ params }) {
 		// the `slug` parameter is available because
 		// this file is called [slug].svelte
-		const res = await this.fetch(`teste/${params.slug}.json`);
-		const data = await res.json();
+		// const res = await this.fetch(`teste/${params.slug}.json`);
+		// const data = await res.json();
 
-		if (res.status === 200) {
+		// if (res.status === 200) {
+		// 	return { teste: data };
+		// } else {
+		// 	this.error(res.status, data.message);
+        // }
+        
+        const res = await this.fetch(`/.netlify/functions/get-teste/${params.slug}`);
+        const data = await res.json();
+        if (res.status === 200) {
 			return { teste: data };
 		} else {
 			this.error(res.status, data.message);
-		}
+        }
+
 	}
 </script>
 
