@@ -8,7 +8,7 @@ const client = new faunadb.Client({
 exports.handler = (event, context, callback) => {
     console.log("Função `get-teste` chamada");
     const id = event.queryStringParameters.slug;
-    return client.query(q.Get(q.Ref(q.Collection('testes', id))))
+    return client.query(q.Get(q.Ref(q.Collection('testes'), id)))
     .then((ret) => {
         return callback(null, {
             statusCode: 200,
