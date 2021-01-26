@@ -12,7 +12,7 @@
             if (testes && testes.length > 0) {
                 testes = testes.map(teste => {
                     console.log(teste);
-                    const id = teste.id;
+                    const id = teste.ref.@ref.id;
                     const name = teste.data.name;
                     const slug = teste.data.slug;
                     const html = teste.data.html;
