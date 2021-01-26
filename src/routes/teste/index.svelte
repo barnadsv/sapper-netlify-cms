@@ -10,9 +10,18 @@
         .then(testes => {
             console.log(testes);
             if (testes && testes.length > 0) {
-                const idObject = { id: testes.ref.id };
-                const data = testes.data;
-                testes = testes.map(testes => { ...idObject, ...data  });
+                testes = testes.map(testes => {
+                    const id = testes.ref.id;
+                    const name = testes.data.name;
+                    const slug = testes.data.slug;
+                    const html = testes.data.html;
+                    return {
+                        id: id, 
+                        name: name,
+                        slug: slug,
+                        html: html
+                    };
+                });
             }
             return { testes };
             // return { testes.map(teste => teste.data) };
