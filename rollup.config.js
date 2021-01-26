@@ -57,7 +57,8 @@ export default {
 					'@babel/plugin-syntax-dynamic-import',
 					['@babel/plugin-transform-runtime', {
 						useESModules: true
-					}]
+					}],
+					'@babel/plugin-proposal-object-rest-spread'
 				]
 			}),
 

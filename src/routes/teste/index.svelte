@@ -10,8 +10,9 @@
         .then(testes => {
             console.log(testes);
             if (testes && testes.length > 0) {
-                let data = testes.data;
-                testes = testes.map(testes => { id: testes.ref.id, ...data });
+                const idObject = { id: testes.ref.id };
+                const data = testes.data;
+                testes = testes.map(testes => { ...idObject, ...data  });
             }
             return { testes };
             // return { testes.map(teste => teste.data) };
