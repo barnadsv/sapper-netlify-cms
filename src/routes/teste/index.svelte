@@ -7,7 +7,7 @@
 </script>
 
 <script>
-    export let testes = [];
+    export const testes = [];
 </script>
 
 <style>

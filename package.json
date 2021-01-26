@@ -17,6 +17,7 @@
     "netlify:build:lambda": "netlify-lambda build functions"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
     "compression": "^1.7.1",
     "encoding": "^0.1.13",
     "faunadb": "^4.0.0",

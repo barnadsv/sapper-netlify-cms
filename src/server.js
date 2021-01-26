@@ -3,6 +3,7 @@ import polka from 'polka';
 import compression from 'compression';
 import * as sapper from '@sapper/server';
 import { createProxyMiddleware } from 'http-proxy-middleware';
+import { json } from 'body-parser';
 
 const { PORT, NODE_ENV } = process.env;
 const dev = NODE_ENV === 'development';
@@ -25,6 +26,7 @@ if (dev && devProxy) {
 
 server // You can also use Express
 	.use(
+		json(),
 		compression({ threshold: 0 }),
 		sirv('static', { dev }),
 		sapper.middleware()

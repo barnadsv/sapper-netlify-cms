@@ -17,6 +17,6 @@ export async function post(req, res) {
     const data = req.body;
     console.log(data);
     // res.end(JSON.stringify(data));
-    YvhmScgfTdqY8fTARUFK 
-
+	const novoTeste = createTeste(data);
+	res.end(JSON.stringify(novoTeste));
 }
