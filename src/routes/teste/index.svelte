@@ -23,7 +23,7 @@
 
 <h1>Testes recentes</h1>
 
-<a href="teste/novo">Novo Teste</a>
+<a href="novo-teste">Novo Teste</a>
 
 <ul>
 	{#each testes as teste}
