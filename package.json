@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "compression": "^1.7.1",
+    "faunadb": "^4.0.0",
     "gray-matter": "^4.0.2",
     "marked": "^1.2.7",
     "polka": "next",
