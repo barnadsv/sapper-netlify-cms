@@ -14,7 +14,7 @@
         const res = await this.fetch(`/.netlify/functions/get-teste?slug=${params.slug}`);
         const ret = await res.json();
         if (res.status === 200) {
-            console.log(ret);
+            // console.log(ret);
             const id = ret['ref']['@ref']['id'];
             const name = ret['data']['name'];
             const slug = ret['data']['slug'];
