@@ -9,6 +9,9 @@
         .then(r => r.json())
         .then(testes => {
             console.log(testes);
+            if (testes && testes.length > 0) {
+                testes = testes.map(testes => testes.data);
+            }
             return { testes };
             // return { testes.map(teste => teste.data) };
         });

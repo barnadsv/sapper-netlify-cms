@@ -25,7 +25,8 @@ export default {
 		plugins: [
 			replace({
 				'process.browser': true,
-				'process.env.NODE_ENV': JSON.stringify(mode)
+				'process.env.NODE_ENV': JSON.stringify(mode),
+				'process.env.FAUNADB_TESTES_SECRET': 'fnAEAgt5K0ACBqM__enzCk5NU84yWrMl_smeOQow'
 			}),
 			svelte({
 				compilerOptions: {
