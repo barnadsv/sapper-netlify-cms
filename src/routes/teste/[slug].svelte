@@ -16,9 +16,9 @@
         if (res.status === 200) {
             console.log(ret);
             const id = ret['ref']['@ref']['id'];
-            const name = ret.data.name;
-            const slug = ret.data.slug;
-            const html = ret.data.html;
+            const name = ret['data']['name'];
+            const slug = ret['data']['slug'];
+            const html = ret['data']['html'];
             const data = {
                 id: id, 
                 name: name,
