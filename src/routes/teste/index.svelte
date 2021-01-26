@@ -10,11 +10,12 @@
         .then(testes => {
             console.log(testes);
             if (testes && testes.length > 0) {
-                testes = testes.map(testes => {
-                    const id = testes.ref.id;
-                    const name = testes.data.name;
-                    const slug = testes.data.slug;
-                    const html = testes.data.html;
+                testes = testes.map(teste => {
+                    conso
+                    const id = teste.ref.id;
+                    const name = teste.data.name;
+                    const slug = teste.data.slug;
+                    const html = teste.data.html;
                     return {
                         id: id, 
                         name: name,
