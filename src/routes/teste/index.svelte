@@ -11,7 +11,7 @@
             console.log(testes);
             if (testes && testes.length > 0) {
                 testes = testes.map(teste => {
-                    conso
+                    console.log(teste);
                     const id = teste.ref.id;
                     const name = teste.data.name;
                     const slug = teste.data.slug;
