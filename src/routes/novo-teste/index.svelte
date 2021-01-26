@@ -55,4 +55,4 @@
 <p>
     {JSON.stringify(teste, 0, 2)}
 </p>
-<button on:click={salvarTeste}>Salvar Teste</button>
+<button on:click={() => salvarTeste(teste)}>Salvar Teste</button>
