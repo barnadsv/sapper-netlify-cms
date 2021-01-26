@@ -10,7 +10,7 @@
         .then(testes => {
             console.log(testes);
             if (testes && testes.length > 0) {
-                testes = testes.map(testes => testes.data);
+                testes = testes.map(testes => { id: testes.ref.id, ...testes.data });
             }
             return { testes };
             // return { testes.map(teste => teste.data) };
@@ -39,6 +39,6 @@
 
 <ul>
     {#each testes as teste}
-        <li><a rel="prefetch" href="teste/{teste.slug}">{teste.name}</a></li>
+        <li><a rel="prefetch" href="teste/{teste.id}">{teste.name}</a></li>
     {/each}
 </ul>
