@@ -14,6 +14,7 @@
         const res = await this.fetch(`/.netlify/functions/get-teste?slug=${params.slug}`);
         const data = await res.json();
         if (res.status === 200) {
+            console.log(data);
 			return { teste: data };
 		} else {
 			this.error(res.status, data.message);
