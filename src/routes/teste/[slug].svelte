@@ -12,9 +12,19 @@
         // }
         
         const res = await this.fetch(`/.netlify/functions/get-teste?slug=${params.slug}`);
-        const data = await res.json();
+        const ret = await res.json();
         if (res.status === 200) {
-            console.log(data);
+            console.log(ret);
+            const id = ret['ref']['@ref']['id'];
+            const name = ret.data.name;
+            const slug = ret.data.slug;
+            const html = ret.data.html;
+            const data = {
+                id: id, 
+                name: name,
+                slug: slug,
+                html: html
+            };
 			return { teste: data };
 		} else {
 			this.error(res.status, data.message);
