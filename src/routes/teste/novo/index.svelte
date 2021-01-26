@@ -1,15 +1,19 @@
 <script>
     // import { user } from "./store.js";
+    import { onMount } from 'svelte';
     let teste = { name: '', slug: '', html: '' };
 
-    const salvarTeste = async (data) => {
-        const res = await fetch('/.netlify/functions/novo-teste', {
-            body: JSON.stringify(data),
-            method: 'POST'
-        });
-        const novoTeste = await res.json();
-        console.log(novoTeste);
-    }
+    onMount(async () => {
+        const salvarTeste = async (data) => {
+            const res = await fetch('/.netlify/functions/novo-teste', {
+                body: JSON.stringify(data),
+                method: 'POST'
+            });
+            const novoTeste = await res.json();
+            console.log(novoTeste);
+        };
+    });
+    
 
 </script>
     
