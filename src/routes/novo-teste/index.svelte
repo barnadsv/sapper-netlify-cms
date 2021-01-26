@@ -8,9 +8,8 @@
     // }
 
     const salvarTeste = async (data) => {
-        const jsonBody = JSON.stringify(data);
-        const res = await fetch(`novo-teste.json`), {
-            body: jsonBody,
+        const res = await fetch(`novo-teste.json`, {
+            body: JSON.stringify(data),
             method: 'POST'
         });
         const novoTeste = await res.json();
