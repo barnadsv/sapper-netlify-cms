@@ -2,22 +2,12 @@
     // import { user } from "./store.js";
     let teste = { name: '', slug: '', html: '' };
 
-    const novoTeste = async (data) => {
-        return fetch('/.netlify/functions/novo-teste', {
+    const salvarTeste = async (data) => {
+        const res = await fetch('/.netlify/functions/novo-teste', {
             body: JSON.stringify(data),
             method: 'POST'
-        })
-        .then(response => {
-            return response.json();
-        })
-        .catch(error => {
-            return error.json();
-        })
-    }
-
-    const salvarTeste = async () => {
-        console.dir(teste);
-        const novoTeste = await salvaTeste(teste);
+        });
+        const novoTeste = await res.json();
         console.log(novoTeste);
     }
 
