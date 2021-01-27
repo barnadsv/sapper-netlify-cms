@@ -11,6 +11,7 @@
     const salvarTeste = async (data) => {
         try {
             const res = await fetch(`/.netlify/functions/novo-teste`, {
+            // const res = await fetch(`http://localhost:9000/novo-teste`, {
                 body: JSON.stringify(data),
                 method: 'POST'
             });

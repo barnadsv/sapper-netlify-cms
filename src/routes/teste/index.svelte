@@ -6,6 +6,7 @@
     // }
     export function preload() {
         return this.fetch(`/.netlify/functions/todos-testes`)
+        // return this.fetch(`http://localhost:9000/todos-testes`)
         .then(r => r.json())
         .then(testes => {
             console.log(testes);

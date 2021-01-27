@@ -3,3 +3,5 @@
   functions = "lambda"
   publish = "__sapper__/export"
 
+[dev]
+  framework = "sapper"

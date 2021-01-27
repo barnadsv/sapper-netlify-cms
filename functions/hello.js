@@ -4,6 +4,10 @@ export function handler(event, context, callback) {
     callback(null, {
         // return null to show no errors
         statusCode: 200, // http status code
+        headers: {
+            /* Required for CORS support to work */
+            'Access-Control-Allow-Origin': '*'
+        },
         body: JSON.stringify({
             msg: "Hello, World! " + Math.round(Math.random() * 10),
         }),

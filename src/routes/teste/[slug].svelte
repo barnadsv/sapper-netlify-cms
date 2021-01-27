@@ -17,6 +17,7 @@
 
         try {
             const res = await this.fetch(`/.netlify/functions/get-teste?slug=${params.slug}`);
+            // const res = await this.fetch(`http://localhost:9000/get-teste?slug=${params.slug}`);
             const ret = await res.json();
             if (res.status === 200) {
                 // console.log(ret);

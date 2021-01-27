@@ -23,6 +23,10 @@ exports.handler = (event, context, callback) => {
         .then((ret) => {
             return callback(null, {
                 statusCode: 200,
+                headers: {
+                    /* Required for CORS support to work */
+                    'Access-Control-Allow-Origin': '*'
+                },
                 body: JSON.stringify(ret)
             });
         })
