@@ -1,5 +1,6 @@
 import faunadb from 'faunadb';
 require('dotenv').config();
+const axios = require('axios');
 
 const q = faunadb.query;
 console.log(process.env.FAUNADB_TESTES_SECRET);
@@ -18,10 +19,25 @@ exports.handler = (event, context, callback) => {
     return client.query(q.Create(q.Ref("classes/testes"), testeItem))
     .then((response) => {
         console.log("success", response);
+        // axios.post('https://api.netlify.com/build_hooks/6010cc80101bb469412ade5d')
+        // .then(function (response) {
+        //     console.log(response);
+        // })
+        // .catch(function (error) {
+        //     console.error(error);
+        // });
+        console.log('Fazendo o build...');
         /* Success! return the response with statusCode 200 */
+        const json = response.json();
+        console.log(json);
+        const id = json['ref']['@ref']['id'];
+        console.log(id);
         return callback(null, {
-            statusCode: 200,
-            body: JSON.stringify(response)
+            statusCode: 302,
+            body: JSON.stringify(response),
+            headers: {
+                Location: `/teste/${id}`
+            }
         });
     }).catch((error) => {
         console.log("error", error);
