@@ -24,6 +24,17 @@ module.exports = (data) => {
             padding: 0 1em;
           }
 
+          ul.svelte-1dbd5up::after {
+            content: '';
+            display: block;
+            clear: both;
+          }
+
+          li.svelte-1dbd5up {
+            display: block;
+            float: left;
+          }
+
           main.svelte-1uhnsl8 {
             position: relative;
             max-width: 56em;
@@ -32,6 +43,8 @@ module.exports = (data) => {
             margin: 0 auto;
             box-sizing: border-box;
           }
+
+
         </style>
       </head>
       <body>

@@ -4,7 +4,7 @@
     //         return { testes };
 	// 	});
     // }
-    export function preload() {
+    const getTodosTestes = async () => {
         return this.fetch(`/.netlify/functions/todos-testes`)
         // return this.fetch(`http://localhost:9000/todos-testes`)
         .then(r => r.json())
@@ -25,7 +25,17 @@
                 });
             }
             return { testes };
+        })
+        .catch(error => {
+            console.error(error);
+            if (error.code === 'EPIPE') {
+                return getTodosTestes();
+            }
         });
+    }
+
+    export function preload() {
+        return getTodosTestes();
     }
 </script>
 

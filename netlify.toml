@@ -8,5 +8,10 @@
 
 [[redirects]]
   from = "/teste/*"
-  to = "/.netlify/functions/prov-teste?id=:splat"
+  to = "/prov-teste/:splat"
   status = 302
+
+[[redirects]]
+  from = "/prov-teste/*"
+  to = "/.netlify/functions/prov-teste?id=:splat"
+  status = 200
