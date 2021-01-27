@@ -17,7 +17,7 @@
             });
             const novoTeste = await res.json();
             console.log(novoTeste);
-            goto('teste');
+            // goto('teste');
         } catch (error) {
             console.error(error);
         }
