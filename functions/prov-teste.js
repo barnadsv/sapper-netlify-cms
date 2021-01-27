@@ -36,7 +36,7 @@ exports.handler = (event, context, callback) => {
       body: JSON.stringify(error),
       statusCode: 301,
       headers: {
-        Location: `/not-found/index.html`,
+        Location: `/404.html`,
       }
     });
   });
