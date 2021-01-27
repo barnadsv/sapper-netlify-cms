@@ -12,7 +12,7 @@ module.exports = (data) => {
         <link href="favicon.png" rel="icon" type="image/png">
         <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         <title>${data.name}</title>
-        <styles>
+        <style>
           ul.svelte-1frg2tf{margin:0 0 1em 0;line-height:1.5}
           .content.svelte-emm3f3 h2{font-size:1.4em;font-weight:500}.content.svelte-emm3f3 pre{background-color:#f9f9f9;box-shadow:inset 1px 1px 5px rgba(0, 0, 0, 0.05);padding:0.5em;border-radius:2px;overflow-x:auto}.content.svelte-emm3f3 pre code{background-color:transparent;padding:0}.content.svelte-emm3f3 ul{line-height:1.5}.content.svelte-emm3f3 li{margin:0 0 0.5em 0}
           h1.svelte-fo2wfu,figure.svelte-fo2wfu,p.svelte-fo2wfu{text-align:center;margin:0 auto}h1.svelte-fo2wfu{font-size:2.8em;text-transform:uppercase;font-weight:700;margin:0 0 0.5em 0}figure.svelte-fo2wfu{margin:0 0 1em 0}p.svelte-fo2wfu{margin:1em auto}@media(min-width: 480px){h1.svelte-fo2wfu{font-size:4em}}
@@ -32,7 +32,7 @@ module.exports = (data) => {
             margin: 0 auto;
             box-sizing: border-box;
           }
-        </styles>
+        </style>
       </head>
       <body>
         <div id="sapper">

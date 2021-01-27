@@ -19,17 +19,15 @@ exports.handler = (event, context, callback) => {
     return client.query(q.Create(q.Ref("classes/testes"), testeItem))
     .then((response) => {
         console.log("success", response);
-        // axios.post('https://api.netlify.com/build_hooks/6010cc80101bb469412ade5d')
-        // .then(function (response) {
-        //     console.log(response);
-        // })
-        // .catch(function (error) {
-        //     console.error(error);
-        // });
+        axios.post('https://api.netlify.com/build_hooks/6010cc80101bb469412ade5d')
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.error(error);
+        });
         console.log('Fazendo o build...');
         /* Success! return the response with statusCode 200 */
-        // const json = response.json();
-        // console.log(json);
         const responseObject = JSON.parse(JSON.stringify(response));
         console.dir(responseObject);
         const id = responseObject['ref']['@ref']['id'];
@@ -38,7 +36,8 @@ exports.handler = (event, context, callback) => {
             statusCode: 302,
             body: JSON.stringify(response),
             headers: {
-                Location: `/teste/${id}`,
+                // Location: `/teste/${id}`,
+                Location: `/.netlify/functions/prov-teste?id=:${id}`,
                 'Access-Control-Allow-Origin': '*'
             }
         });
