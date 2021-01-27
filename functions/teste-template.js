@@ -10,18 +10,29 @@ module.exports = (data) => {
         <link href="global.css" rel="stylesheet">
         <link href="manifest.json" rel="manifest" crossorigin="use-credentials">
         <link href="favicon.png" rel="icon" type="image/png">
-        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script> <script>__SAPPER__={baseUrl:"",preloaded:[void 0,{}]};if('serviceWorker' in navigator)navigator.serviceWorker.register('/service-worker.js');(function(){try{eval("async function x(){}");var main="/client/client.6cff3ab8.js"}catch(e){main="/client/legacy/client.8c6118a0.js"};var s=document.createElement("script");try{new Function("if(0)import('')")();s.src=main;s.type="module";s.crossOrigin="use-credentials";}catch(e){s.src="/client/shimport@2.0.4.js";s.setAttribute("data-main",main);}document.head.appendChild(s);}());</script><script src="/client/client.6cff3ab8.js" type="module" crossorigin="use-credentials"></script> 
-        <link href="client/client-e118e612.css" rel="stylesheet">
-        <link href="client/index-f906806b.css" rel="stylesheet">
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         <title>${data.name}</title>
-        <link href="/client/client.6cff3ab8.js" rel="modulepreload" as="script" crossorigin="use-credentials">
-        <link href="/client/client-e118e612.css" rel="preload" as="style">
-        <link href="/client/index.d681eda1.js" rel="modulepreload" as="script" crossorigin="use-credentials">
-        <link href="/client/inject_styles.5607aec6.js" rel="modulepreload" as="script" crossorigin="use-credentials">
-        <link href="/client/index-f906806b.css" rel="preload" as="style">
-        <link rel="stylesheet" href="https://competent-hodgkin-cf9742.netlify.app/client/index-7ed37c94.css">
-        <link rel="stylesheet" href="https://competent-hodgkin-cf9742.netlify.app/client/[slug]-5bc8f95f.css">
-        <link rel="stylesheet" href="https://competent-hodgkin-cf9742.netlify.app/client/index-568b94c6.css">
+        <styles>
+          ul.svelte-1frg2tf{margin:0 0 1em 0;line-height:1.5}
+          .content.svelte-emm3f3 h2{font-size:1.4em;font-weight:500}.content.svelte-emm3f3 pre{background-color:#f9f9f9;box-shadow:inset 1px 1px 5px rgba(0, 0, 0, 0.05);padding:0.5em;border-radius:2px;overflow-x:auto}.content.svelte-emm3f3 pre code{background-color:transparent;padding:0}.content.svelte-emm3f3 ul{line-height:1.5}.content.svelte-emm3f3 li{margin:0 0 0.5em 0}
+          h1.svelte-fo2wfu,figure.svelte-fo2wfu,p.svelte-fo2wfu{text-align:center;margin:0 auto}h1.svelte-fo2wfu{font-size:2.8em;text-transform:uppercase;font-weight:700;margin:0 0 0.5em 0}figure.svelte-fo2wfu{margin:0 0 1em 0}p.svelte-fo2wfu{margin:1em auto}@media(min-width: 480px){h1.svelte-fo2wfu{font-size:4em}}
+          .content.svelte-gak8nd{display:grid;grid-template-columns:20% 80%;grid-column-gap:10px}
+          
+          nav.svelte-1dbd5up {
+            border-bottom: 1px solid rgba(255,62,0,0.1);
+            font-weight: 300;
+            padding: 0 1em;
+          }
+
+          main.svelte-1uhnsl8 {
+            position: relative;
+            max-width: 56em;
+            background-color: white;
+            padding: 2em;
+            margin: 0 auto;
+            box-sizing: border-box;
+          }
+        </styles>
       </head>
       <body>
         <div id="sapper">
