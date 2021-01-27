@@ -22,9 +22,9 @@ const getTodosTestes = async () => {
         .then((ret) => {
             return { success: true, body: ret };
         })
-        .catch((error) => {
+        .catch(async (error) => {
             if (error.code === 'EPIPE') {
-                const result = getTodosTestes();
+                const result = await getTodosTestes();
                 return { success: result.success, body: result.body };
             } else {
                 return { success: false, body: error };
@@ -35,8 +35,8 @@ const getTodosTestes = async () => {
     });
 }
 
-exports.handler = (event, context, callback) => {
-    const result = getTodosTestes();
+exports.handler = async (event, context, callback) => {
+    const result = await getTodosTestes();
     if (result.success) {
         return callback(null, {
             statusCode: 200,

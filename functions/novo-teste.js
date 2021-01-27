@@ -36,7 +36,7 @@ exports.handler = (event, context, callback) => {
             statusCode: 302,
             body: JSON.stringify(response),
             headers: {
-                Location: `/teste/${id}`,
+                // Location: `/teste/${id}`,
                 // Location: `/.netlify/functions/prov-teste?id=:${id}`,
                 'Access-Control-Allow-Origin': '*'
             }
