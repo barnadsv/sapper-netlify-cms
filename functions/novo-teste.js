@@ -30,7 +30,9 @@ exports.handler = (event, context, callback) => {
         /* Success! return the response with statusCode 200 */
         // const json = response.json();
         // console.log(json);
-        const id = response['ref']['@ref']['id'];
+        const responseObject = JSON.parse(response.json());
+        console.dir(responseObject);
+        const id = responseObject['ref']['@ref']['id'];
         console.log(id);
         return callback(null, {
             statusCode: 302,
