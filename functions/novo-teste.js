@@ -28,9 +28,9 @@ exports.handler = (event, context, callback) => {
         // });
         console.log('Fazendo o build...');
         /* Success! return the response with statusCode 200 */
-        const json = response.json();
-        console.log(json);
-        const id = json['ref']['@ref']['id'];
+        // const json = response.json();
+        // console.log(json);
+        const id = response['ref']['@ref']['id'];
         console.log(id);
         return callback(null, {
             statusCode: 302,
