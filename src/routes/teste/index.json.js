@@ -1,26 +1,26 @@
-// import fs from 'fs';
-// import path from 'path';
-// import grayMatter from 'gray-matter';
-if (typeof fetch !== 'function') {
-    global.fetch = require('node-fetch');
-}
+// // import fs from 'fs';
+// // import path from 'path';
+// // import grayMatter from 'gray-matter';
+// if (typeof fetch !== 'function') {
+//     global.fetch = require('node-fetch');
+// }
 
-const getAllTestes = () => {
-	return fetch('/.netlify/functions/todos-testes', {
-        method: 'GET'
-    })
-    .then(response => {
-        return response.json();
-    })
-    .catch(error => {
-        return error.json();
-    });
-}
+// const getAllTestes = () => {
+// 	return fetch('/.netlify/functions/todos-testes', {
+//         method: 'GET'
+//     })
+//     .then(response => {
+//         return response.json();
+//     })
+//     .catch(error => {
+//         return error.json();
+//     });
+// }
 
-export function get(_, res) {
-	res.writeHead(200, {
-		'Content-Type': 'application/json'
-	});
-	const testes = getAllTestes();
-	res.end(JSON.stringify(testes));
-}
+// export function get(_, res) {
+// 	res.writeHead(200, {
+// 		'Content-Type': 'application/json'
+// 	});
+// 	const testes = getAllTestes();
+// 	res.end(JSON.stringify(testes));
+// }
