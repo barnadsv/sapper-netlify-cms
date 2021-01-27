@@ -1,4 +1,5 @@
 <script>
+    import { goto } from '@sapper/app';
     // import { user } from "./store.js";
     // import { onMount } from 'svelte';
     let teste = { name: '', slug: '', html: '' };
@@ -8,12 +9,17 @@
     // }
 
     const salvarTeste = async (data) => {
-        const res = await fetch(`/.netlify/functions/novo-teste`, {
-            body: JSON.stringify(data),
-            method: 'POST'
-        });
-        const novoTeste = await res.json();
-        console.log(novoTeste);
+        try {
+            const res = await fetch(`/.netlify/functions/novo-teste`, {
+                body: JSON.stringify(data),
+                method: 'POST'
+            });
+            const novoTeste = await res.json();
+            console.log(novoTeste);
+            goto('teste');
+        } catch (error) {
+            console.error(error);
+        }
         
     }
 

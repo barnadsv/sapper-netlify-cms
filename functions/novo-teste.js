@@ -1,6 +1,8 @@
 import faunadb from 'faunadb';
+require('dotenv').config();
 
 const q = faunadb.query;
+console.log(process.env.FAUNADB_TESTES_SECRET);
 const client = new faunadb.Client({
     secret: process.env.FAUNADB_TESTES_SECRET
 });

@@ -1,6 +1,8 @@
 import faunadb from 'faunadb';
+require('dotenv').config();
 
 const q = faunadb.query;
+console.log(process.env.FAUNADB_TESTES_SECRET);
 const client = new faunadb.Client({
     secret: process.env.FAUNADB_TESTES_SECRET
 });
@@ -12,17 +14,25 @@ exports.handler = (event, context, callback) => {
         const testeRefs = response.data;
         console.log("Testes refs", testeRefs);
         console.log(`${testeRefs.length} testes achados`);
-        // create new query out of todo refs. http://bit.ly/2LG3MLg
+        // cria nova consulta a partir de refs. http://bit.ly/2LG3MLg
         const getAllTestesDataQuery = testeRefs.map((ref) => {
             return q.Get(ref);
         });
         // then query the refs
-        return client.query(getAllTestesDataQuery).then((ret) => {
+        return client.query(getAllTestesDataQuery)
+        .then((ret) => {
             return callback(null, {
                 statusCode: 200,
                 body: JSON.stringify(ret)
             });
-        });
+        })
+        .catch((error) => {
+            console.log("error", error);
+            return callback(null, {
+                statusCode: 400,
+                body: JSON.stringify(error)
+            });
+        })
     }).catch((error) => {
         console.log("error", error);
         return callback(null, {
