@@ -5,3 +5,8 @@
 
 [dev]
   framework = "sapper"
+
+[[redirects]]
+  from = "/teste/*"
+  to = "/.netlify/functions/prov-teste?id=:splat"
+  status = 302
