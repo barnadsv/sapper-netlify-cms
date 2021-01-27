@@ -1,35 +1,12 @@
 <script context="module">
 	export async function preload({ params }) {
 		// the `slug` parameter is available because
-        // this file is called [slug].svelte
-        try {
-            const res = await this.fetch(`teste/${params.slug}.json`);
-            const data = await res.json();
-
-            if (res.status === 200) {
-                return { teste: data };
-            } else {
-                this.error(res.status, data.message);
-            }
-        } catch (error) {
-            this.error(500, error);
-        }
-
+        // // this file is called [slug].svelte
         // try {
-        //     const res = await this.fetch(`/.netlify/functions/get-teste?slug=${params.slug}`);
-        //     const ret = await res.json();
+        //     const res = await this.fetch(`teste/${params.slug}.json`);
+        //     const data = await res.json();
+
         //     if (res.status === 200) {
-        //         // console.log(ret);
-        //         const id = ret['ref']['@ref']['id'];
-        //         const name = ret['data']['name'];
-        //         const slug = ret['data']['slug'];
-        //         const html = ret['data']['html'];
-        //         const data = {
-        //             id: id, 
-        //             name: name,
-        //             slug: slug,
-        //             html: html
-        //         };
         //         return { teste: data };
         //     } else {
         //         this.error(res.status, data.message);
@@ -37,6 +14,29 @@
         // } catch (error) {
         //     this.error(500, error);
         // }
+
+        try {
+            const res = await this.fetch(`/.netlify/functions/get-teste?slug=${params.slug}`);
+            const ret = await res.json();
+            if (res.status === 200) {
+                // console.log(ret);
+                const id = ret['ref']['@ref']['id'];
+                const name = ret['data']['name'];
+                const slug = ret['data']['slug'];
+                const html = ret['data']['html'];
+                const data = {
+                    id: id, 
+                    name: name,
+                    slug: slug,
+                    html: html
+                };
+                return { teste: data };
+            } else {
+                this.error(res.status, data.message);
+            }
+        } catch (error) {
+            this.error(500, error);
+        }
 
 	}
 </script>

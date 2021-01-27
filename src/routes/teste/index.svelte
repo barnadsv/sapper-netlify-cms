@@ -1,31 +1,31 @@
 <script context="module">
-	export function preload() {
-		return this.fetch(`teste.json`).then(r => r.json()).then(testes => {
-            return { testes };
-		});
-    }
-    // export function preload() {
-    //     return this.fetch(`/.netlify/functions/todos-testes`)
-    //     .then(r => r.json())
-    //     .then(testes => {
-    //         console.log(testes);
-    //         if (testes && testes.length > 0) {
-    //             testes = testes.map(teste => {
-    //                 const id = teste['ref']['@ref']['id'];
-    //                 const name = teste.data.name;
-    //                 const slug = teste.data.slug;
-    //                 const html = teste.data.html;
-    //                 return {
-    //                     id: id, 
-    //                     name: name,
-    //                     slug: slug,
-    //                     html: html
-    //                 };
-    //             });
-    //         }
+	// export function preload() {
+	// 	return this.fetch(`teste.json`).then(r => r.json()).then(testes => {
     //         return { testes };
-    //     });
+	// 	});
     // }
+    export function preload() {
+        return this.fetch(`/.netlify/functions/todos-testes`)
+        .then(r => r.json())
+        .then(testes => {
+            console.log(testes);
+            if (testes && testes.length > 0) {
+                testes = testes.map(teste => {
+                    const id = teste['ref']['@ref']['id'];
+                    const name = teste.data.name;
+                    const slug = teste.data.slug;
+                    const html = teste.data.html;
+                    return {
+                        id: id, 
+                        name: name,
+                        slug: slug,
+                        html: html
+                    };
+                });
+            }
+            return { testes };
+        });
+    }
 </script>
 
 <script>

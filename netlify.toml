@@ -2,3 +2,4 @@
   command = "CI= npm run netlify:build"
   functions = "lambda"
   publish = "__sapper__/export"
+
