@@ -17,6 +17,7 @@
     "netlify:build:lambda": "netlify-lambda build functions"
   },
   "dependencies": {
+    "@beyonk/sapper-httpclient": "^7.3.1",
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "compression": "^1.7.1",

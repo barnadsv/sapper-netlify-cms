@@ -4,6 +4,9 @@ import compression from 'compression';
 import * as sapper from '@sapper/server';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 import { json } from 'body-parser';
+import Api from '@beyonk/sapper-httpclient';
+
+Api.configure({ baseUrl: '/.netlify/functions' });
 
 const { PORT, NODE_ENV } = process.env;
 const dev = NODE_ENV === 'development';
